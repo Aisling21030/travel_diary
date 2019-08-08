@@ -11,8 +11,10 @@
     </div>
   <% end %>
 
-  <p>City: <%= form.collection_select :city_id, City.all, :id, :name %></p> <p> Title: <%= form.text_field :title %></p>
-<p><%= form.text_area :body, size: "70x20" %></p>
+  <p>City: <%= form.collection_select :city_id, City.all, :id, :name %></p>
+  <p> Title: <%= form.text_field :title %></p>
+  <p><%= form.text_area :body, size: "70x20" %></p>
+  <p>Picture: <%= form.file_field :picture %>
   <div class="actions">
     <%= form.submit %>
   </div>
