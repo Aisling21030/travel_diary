@@ -1,6 +1,11 @@
 class UpdateReviews < ActiveRecord::Migration[5.2]
   def change
-    add_column :reviews, :title, :string
-    add_column :reviews, :body, :text
+    unless column_exists? :reviews, :title
+      add_column :reviews, :title, :string
+    end
+
+    unless column_exists? :reviews, :body
+      add_column :reviews, :body, :text
+    end
   end
 end
