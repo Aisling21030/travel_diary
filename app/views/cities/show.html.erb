@@ -1,7 +1,18 @@
 <p id="notice"><%= notice %></p>
 
-<h1><%= @city. name %></h1>
-<div><%= image_tag @city.picture.variant(resize: "300x300") %></div>
+<%= link_to city_path(@city) do %>
+<h1 class="page-title"><%= @city. name %></h1>
 
-<%= link_to 'Edit', edit_city_path(@city) %> |
+<div class="content-grid">
+ <% @reviews.each do |review| %> 
+ <div class="content-block">
+   <div class="content-image"><%= image_tag review.picture.variant(resize: "300x300") %></div>
+   <div class="content-title"><%= review.title %></div> 
+   </div>
+  <% end %>
+<% end %>
+</div>
+<%= link_to 'Edit', edit_city_path(@city) %> | 
 <%= link_to 'Back', cities_path %>
+
+ 
